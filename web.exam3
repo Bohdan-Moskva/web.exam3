@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма</title>
+    <style>
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <h1>Форма реєстрації</h1>
+    <form id="registrationForm">
+        <label for="surname">Прізвище:</label>
+        <input type="text" id="surname" placeholder="Введіть прізвище" required>
+
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" placeholder="Введіть ім'я" required>
+
+        <label for="email">Електронна пошта:</label>
+        <input type="email" id="email" placeholder="example@gmail.com" required>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" placeholder="Введіть пароль" required>
+
+        <label for="birthdate">Дата народження:</label>
+        <input type="date" id="birthdate" required>
+
+        <label for="gender">Стать:</label>
+        <select id="gender">
+            <option value="male">Чоловіча</option>
+            <option value="female">Жіноча</option>
+        </select>
+
+        <label>Хобі:</label>
+        <input type="checkbox" id="hobby1"> Спорт<br>
+        <input type="checkbox" id="hobby2"> Музика<br>
+        <input type="checkbox" id="hobby3"> Читання
+
+        <label for="city">Місто проживання:</label>
+        <select id="city">
+            <option value="lviv">Львів</option>
+            <option value="kyiv">Київ</option>
+            <option value="kharkiv">Харків</option>
+        </select>
+
+        <div class="buttons">
+            <button type="submit">Надіслати</button>
+            <button type="reset">Стерти</button>
+        </div>
+    </form>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Форма успішно надіслана!');
+        });
+    </script>
+</body>
+</html>
